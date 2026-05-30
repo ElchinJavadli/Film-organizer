@@ -1,38 +1,254 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(to right, #6a0dad, #ff6600);
   text-align: center;
+  padding: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-bar input {
+  width: 420px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 22px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+.movies-section {
+  flex: 2;
+  border: 2px solid #f28b82;
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 400px;
+}
+
+.favorites-section {
+  flex: 1;
+  border: 2px solid #f28b82;
+  border-radius: 10px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  height: 400px;
+  
+
+}
+
+.favorites-list {
+  flex: 2;
+}
+
+.fav-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 6px 0;
+}
+
+.fav-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.favorites-section input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.btn-add-list  {
+  padding: 10px;
+  width: 180px;
+  background-color: #999;
   color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+    margin-left: 180px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.btn-add-list.active {
+  background-color: #6a0dad;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-look {
+  padding: 10px;
+  width: 180px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-left: 180px;
+}
+
+
+
+
+
+
+
+.movie-card {
+  display: flex;
+  gap: 16px;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.movie-card img {
+  height: 400px;
+  border-radius: 6px;
+}
+
+.movie-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.movie-info p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.btn-favorite {
+  padding: 9px 18px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-favorite:disabled {
+  background-color: #bbb;
+}
+
+
+
+
+.fav-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding-right: 60px;
+  margin-top: 20px;
+  
+  border-radius: 10px;
+}
+
+.list-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  
+}
+
+.list-card h2 {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 14px;
+}
+
+.list-movie-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.list-movie-item span {
+  font-weight: bold;
+}
+
+.btn-imdb {
+  padding: 6px 14px;
+  background-color: #f5c518;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-remove-list {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-back {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 30px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-bar input {
+    width: 220px;
   }
 }
